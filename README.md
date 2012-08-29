@@ -23,13 +23,15 @@ Essential Health Benefits
 
 
 
-Models
 
-Insurance companies
-    name
-    address
-    phone
-    website
 
-Insurance plans
-    name of plan
+Setting Up:
+1.  In the setting file
+ change
+ 
+ choose a database and change Default.  It is currently a sql lite 3.  Which is ok for
+ testing but will not hold up to a production environment.
+ 
+ TIME_ZONE = 'America/Chicago'
+ to whatever your time zone is
+ 
