@@ -31,12 +31,14 @@ Setting Up:
  
  choose a database and change Default.  It is currently a sql lite 3.  Which is ok for
  testing but will not hold up to a production environment.
- 
- the default superuser is:
- user: admin
- password:admin
- 
+
  
  TIME_ZONE = 'America/Chicago'
  to whatever your time zone is
  
+ 
+ 
+  
+ the default database superuser is:
+ user: admin
+ password:admin

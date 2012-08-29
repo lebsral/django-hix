@@ -1,5 +1,6 @@
 from django.db import models
-import PIL
+#import PIL
+#PIL needed for logo
 
 
 # Create your models here.
@@ -12,7 +13,7 @@ class InsurnaceCo(models.Model):
   insurancecostate = models.CharField(max_length=20)
   insurancecozip = models.CharField(max_length=10)
   insurancecophone = models.CharField(max_length=13)
-  insurancecowebsite = models.CharField(max_length=200)
+  insurancecowebsite = models.URLField(max_length=200)
   insurancecopublicemail = models.EmailField(max_length=254)
   insurancecoadminemail = models.EmailField(max_length=254)
   #insurancecologo = models.ImageField(upload_to=
@@ -25,4 +26,32 @@ class Plans(models.Model):
   planname = models.CharField(max_length=200)
   approved = models.BooleanField
   dateaplanpproved = models.DateTimeField
+  planprice = models.
   
+  #maybe these should be constants? since there will only be one per?
+  #FPL  federal poverty level = $11,172 for individual
+class Exchange(models.Model):
+  exchangename = models.CharField(max_length=200)
+  exchangeaddress1 = models.CharField(max_length=200)
+  exchangeadress2 = models.CharField(max_length=200)
+  exchangecity = models.CharField(max_length=200)
+  exchangestate = models.CharField(max_length=20)
+  exchangezip = models.CharField(max_length=10)
+  exchangephone = models.CharField(max_length=13)
+  exchangewebsite = models.URLField(max_length=200)
+  exchangepublicemail = models.EmailField(max_length=254)
+  exchangeadminemail = models.EmailField(max_length=254)
+  #exchangelogo = models.ImageField(upload_to=
+  #what legislation or executive order created this exchange
+  exchangelegalauirization = models.URLField(max_length=200)
+  exchangevisionstatement = models.CharField(max_length=254)
+  #by ACA must be at 
+  exchangemaxemployees = models.IntegerField
+  exchangeinsurancecommission = models.URLField(max_length=200)
+  
+class ExchangeBoard(models.Model)
+  exchange = models.ForeighnKey(Exchange)
+  exchangeboardmembername = models.CharField(max_length=200)
+  exchangeboardmembertitle = models.CharField(max_length=200)
+  exchangeboardmemberbio = models.CharField(max_length=512)
+  #exchangeboardprofilepic = models.ImageField(upload_to=
