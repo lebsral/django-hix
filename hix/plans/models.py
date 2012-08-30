@@ -17,16 +17,21 @@ class InsurnaceCo(models.Model):
   insurancecopublicemail = models.EmailField(max_length=254)
   insurancecoadminemail = models.EmailField(max_length=254)
   #insurancecologo = models.ImageField(upload_to=
+  def __unicode__(self):
+        return self.insuranceconame
 
 
 class Plans(models.Model):
   description = "The plans available (or potentially available) in the exchange"
   
-  insuranceco = models.ForeignKey(InsuranceCo)
+  #insuranceco = models.ForeignKey(InsuranceCo)
   planname = models.CharField(max_length=200)
-  approved = models.BooleanField
-  dateaplanpproved = models.DateTimeField
-  planprice = models.
+  approved = models.BooleanField()
+  dateaplanpproved = models.DateTimeField()
+  planprice = models.DecimalField(max_digits=8, decimal_places=2)
+  def __unicode__(self):
+        return self.planname
+
   
   #maybe these should be constants? since there will only be one per?
   #FPL  federal poverty level = $11,172 for individual
@@ -46,12 +51,16 @@ class Exchange(models.Model):
   exchangelegalauirization = models.URLField(max_length=200)
   exchangevisionstatement = models.CharField(max_length=254)
   #by ACA must be at 
-  exchangemaxemployees = models.IntegerField
+  exchangemaxemployees = models.IntegerField()
   exchangeinsurancecommission = models.URLField(max_length=200)
+  def __unicode__(self):
+        return self.exchangename
   
-class ExchangeBoard(models.Model)
-  exchange = models.ForeighnKey(Exchange)
+class ExchangeBoard(models.Model):
+  #exchange = models.ForeignKey('Exchange')
   exchangeboardmembername = models.CharField(max_length=200)
   exchangeboardmembertitle = models.CharField(max_length=200)
   exchangeboardmemberbio = models.CharField(max_length=512)
   #exchangeboardprofilepic = models.ImageField(upload_to=
+  def __unicode__(self):
+        return self.exchangeboardmembername
