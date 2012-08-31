@@ -5,7 +5,9 @@ from django.db import models
 
 # Create your models here.
 
-class InsurnaceCo(models.Model):
+        
+        
+class Insurnaceco(models.Model):
   insuranceconame = models.CharField(max_length=200)
   insurancecoaddress1 = models.CharField(max_length=200)
   insurancecoadress2 = models.CharField(max_length=200)
@@ -21,17 +23,17 @@ class InsurnaceCo(models.Model):
         return self.insuranceconame
 
 
+
 class Plans(models.Model):
   description = "The plans available (or potentially available) in the exchange"
-  
-  #insuranceco = models.ForeignKey(InsuranceCo)
+  #insuranceco = models.ForeignKey("Insuranceco")
   planname = models.CharField(max_length=200)
   approved = models.BooleanField()
   dateaplanpproved = models.DateTimeField()
   planprice = models.DecimalField(max_digits=8, decimal_places=2)
   def __unicode__(self):
         return self.planname
-
+        
   
   #maybe these should be constants? since there will only be one per?
   #FPL  federal poverty level = $11,172 for individual
