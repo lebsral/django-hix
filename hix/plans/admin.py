@@ -13,6 +13,7 @@ class ExchangeAdmin(admin.ModelAdmin):
 		
 class PlansAdmin(admin.ModelAdmin):
 		list_display = ('planname', 'approved', 'planprice')
+		search_fields = ['planname']
   
 admin.site.register(Exchange, ExchangeAdmin)
 admin.site.register(Plans, PlansAdmin)
