@@ -36,7 +36,9 @@ Setting Up:
  TIME_ZONE = 'America/Chicago'
  to whatever your time zone is
  
- 
+ Change
+ TEMPLATE_DIRS
+ to the path that the templates are going to be in
  
   
  the default database superuser is:

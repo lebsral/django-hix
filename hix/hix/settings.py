@@ -106,7 +106,9 @@ ROOT_URLCONF = 'hix.urls'
 WSGI_APPLICATION = 'hix.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/~/Documents/mycode/django-hix/hix/templates',
+    '/Users/larsbell/Documents/mycode/django-hix/hix/templates',
+   
+    
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
